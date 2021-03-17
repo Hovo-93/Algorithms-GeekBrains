@@ -21,7 +21,7 @@
 """
 
 
-# 1. Сложность  алгоритма: O(n^2) - квадратичная
+# 1. Сложность  алгоритма: O(n) -
 def search_min(array: list):
     tmp = array[0]
     for i in range(len(array)):
@@ -34,12 +34,27 @@ mass = [2, 3, 5, 8, 9, 6, 1, 11, -11, 33, 55, 88, 0, -1, -2, -3, -22, -88, -999]
 print(search_min(mass))
 
 
-# 2. Сложность  алгоритма: O(1)
+# 2. Сложность  алгоритма: O(n) ???
 
 def search_min2(array: list):
-    list_copy = list(array)
-    return min(list_copy)
+    list_copy = list(array)  # O(len(...)
+    return min(list_copy)  # O(n)
 
 
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, -1, -2, -3, -4]
 print(search_min2(a))
+
+
+# 3 Сложность  алгоритма: O(n^2)
+def list_min(lst):
+    for i in lst:
+        is_min = True
+        for j in lst:
+            if i > j:
+                is_min = False
+        if is_min:
+            return i
+
+
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, -1, -2, -3, -4]
+print(list_min(a))
